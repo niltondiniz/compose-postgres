@@ -24,10 +24,10 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-       - pgadmin:/var/lib/pgadmin
+       - pgadmin:/data/pgadmin
 
     ports:
-      - "${PGADMIN_PORT:-5050}:80"
+      - "${PGADMIN_PORT:-5050}:8080"
     networks:
       - postgres
     restart: unless-stopped
